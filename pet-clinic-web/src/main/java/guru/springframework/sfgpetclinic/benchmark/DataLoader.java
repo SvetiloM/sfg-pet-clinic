@@ -2,12 +2,14 @@ package guru.springframework.sfgpetclinic.benchmark;
 
 import guru.springframework.sfgpetclinic.model.*;
 import guru.springframework.sfgpetclinic.services.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
 @Component
+@Slf4j
 public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
@@ -95,7 +97,7 @@ public class DataLoader implements CommandLineRunner {
 
         visitService.save(catVisit);
 
-        System.out.println("Loaded Owners....");
+        log.info("Loaded Owners....");
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
@@ -111,6 +113,6 @@ public class DataLoader implements CommandLineRunner {
 
         vetService.save(vet2);
 
-        System.out.println("Loaded Vets....");
+        log.info("Loaded Vets....");
     }
 }
