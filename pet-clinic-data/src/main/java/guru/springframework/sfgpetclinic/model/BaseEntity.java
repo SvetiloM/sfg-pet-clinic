@@ -5,7 +5,8 @@ import lombok.*;
 
 import java.io.Serializable;
 
-@Data
+@Setter
+@Getter
 @MappedSuperclass
 public class BaseEntity implements Serializable {
     @Id

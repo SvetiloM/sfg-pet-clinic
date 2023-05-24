@@ -5,7 +5,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
 import lombok.*;
 
-@Data
+@Setter
+@Getter
 @MappedSuperclass
 public class Person extends BaseEntity {
     @Column(name = "first_name")
